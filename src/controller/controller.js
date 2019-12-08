@@ -14,7 +14,7 @@ exports.post = async (req, res) => {
         ACL: 'public-read',
         Bucket: process.env.BUCKET_NAME,
         Body: fs.createReadStream(path),
-        key: `${req.file.originalname}`
+        Key: `${req.file.originalname}`
     };
     s3.upload(params, (err, data) => {
         if (err) {
